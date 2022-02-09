@@ -184,7 +184,8 @@
       flex: 100%;
       display: flex;
       flex-wrap: wrap;
-      background-color: #6BB3A8;
+      /*background-color: #6BB3A8;*/
+      background-color: #AF4327;
       height: 9em;
      }
 
