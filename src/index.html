@@ -2,11 +2,231 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id = "inicio">
+        <div class = "flex-container1" >
+
+         <!--   <div class="nubes">
+        <div><img src="./image/Nube.png" ></img></div>
+        <div><img src="./image/Nube.png" ></img></div>
+        <div><img src="./image/Nube.png" ></img></div>
+        <div><img src="./image/Nube.png" ></img></div>
+        </div>-->
+
+      <section class = "flex-item-left">
+      <div class = "cajabienvenida">
+      <h1 class = "bienvenida">¡Bienvenidx!</h1><br>
+      <p class = "entrada">Si quieres encontrar información <br>
+      sobre las películas de Studio Ghibli<br>
+      da click aquí.</p><br><br>
+      <button id= "btnEntrar">Entrar</button>
+      </div>
+      </section>
+      <section class = "flex-item-right">
+        <figure>
+          <img src="./image/Entrada_personajes_auto_x2.png" alt="">
+        </figure>
+      </section>
+    </div>
+  </div>
+  <div id = "catalogo">
+    <div class = "flex-container2" >
+      <div class = "header">
+            <h1 class = "titulo">FILMOGRAFÍA </h1>
+            <figure>
+            <img class = "logo" src="./image/logo.png" alt="">
+            </figure>
+            <!--<ul class = "menu" >
+            <li class = "dropdown">Búsqueda &#9662;
+              <ul class = "features-menu">
+                <li><a href='#'>Top 5</a></li>
+               </ul>
+            </li>
+            </ul>-->
+        </div>
+    <!--Aca poner el contededor-->
+    <section>
+        <section>
+            <div class="modal-container" id="modal_container">
+                <div class="modalprincipal">
+                    <h1>Este es un modal ejemplo</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa dicta tempore molestiae nemo, sed magnam ullam minus nihil deserunt accusamus delectus facilis eligendi, qui iusto veritatis quo perspiciatis excepturi!</p>
+                    <button id="closeBtn">cerrar</button>
+                </div>
+            </div>
+            </section>
+        <!--<form class="busqueda">
+            <input type="search" placeholder="Busqueda por título">
+            <button>
+             <figure>
+                <img src="./assets/lupa.svg" alt="">
+            </figure>
+        </button>
+        </form>-->
+    </section>
+        <section class="slider">
+            <div class="slider__container">
+                <img src="assets/leftarrow.svg" alt="flechita" class="slider__arrow" id="before">
+        <section class="sliderBody showPanel" data-id="1">
+            <div class="card">
+                <h3>Castle <br> in the Sky</h3>
+                <figure>
+                    <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg" alt="">
+                </figure>
+                <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+            </div>
+            <div class="card">
+                <h3>My Neighbor Totoro</h3>
+                <figure>
+                    <img src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg"alt="">
+                </figure>
+                <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+            </div>
+                        <div class="card">
+                            <h3>Kiki's Delivery Service</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/48/Kiki%27s_Delivery_Service_%282%29.jpg"alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>Grave of the Fireflies</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg"alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>Only <br>
+                                Yesterday</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/a/a9/Only_Yesterday.jpg"alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                    </section>
+                    <section class="sliderBody" data-id="2">
+                        <div class="card">
+                        <h3>Porco<br>
+                            Rosso</h3>
+                        <figure>
+                            <img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/41/Porco_Rosso.jpg" alt="">
+                        </figure>
+                        <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>Pom <br>Poko</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/9/9e/Pom_Poko.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                            </div>
+                        <div class="card">
+                            <h3>Whisper of the Heart</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/7/7b/Whisper_of_the_Heart.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>Princess Mononoke</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c6/Princess_Mononoke.jpg" alt="">
+                                </figure>
+                                <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>My Neighbors the Yamadas</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                    </section>
+                    <section class="sliderBody" data-id="3">
+                        <div class="card">
+                            <h3>Spirited <br> Away</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/9/9e/Spirited_Away.png" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>The Cat <br> Returns</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Cat_Returns.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                                <h3>Howl's Moving Castle</h3>
+                                <figure>
+                                    <img src="https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg" alt="">
+                        </figure>
+                        <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>Tales from Earthsea</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/0/09/%C3%96v%C3%A4rlden.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>Ponyo on the Cliff by the Sea</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/5/50/Ponyo_on_the_Cliff_by_the_Sea.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                    </section>
+                    <section class="sliderBody" data-id="4">
+                        <div class="card">
+                            <h3>The Secret World of Arrietty</h3>
+                            <figure>
+                                <img src="https://picfiles.alphacoders.com/351/351154.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>From Up on Poppy Hill</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/b/bb/From_Up_on_Poppy_Hill.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>The Wind <br>Rises</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/2/2d/The_Wind_Rises.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>The Tale of the Princess Kaguya</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        <div class="card">
+                            <h3>When Marnie Was There</h3>
+                            <figure>
+                                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/7/7a/When_Marnie_Was_There.jpg" alt="">
+                            </figure>
+                            <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        </div>
+                        </section><br>
+            <img src="assets/rightarrow.svg" alt="flechita" class="slider__arrow" id="after">
+        </div>
+        <button id= "btnRegresa">Regresa</button>
+    </section>
+</div>
+    </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
