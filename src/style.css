@@ -29,28 +29,28 @@
   .nubes div:nth-child(1){
     top: 5%;
     left: 20%;
-    animation:fall 5s linear infinite;
+    animation:fall 10s linear infinite;
     animation-delay:-1s;
   }
 
   .nubes div:nth-child(2){
     top: 30%;
     left: 20%;
-    animation:fall 4s linear infinite;
+    animation:fall 14s linear infinite;
     animation-delay:-4s;
   }
 
   .nubes div:nth-child(3){
     top: 55%;
     left: 20%;
-    animation:fall 3s linear infinite ;
+    animation:fall 13s linear infinite ;
     animation-delay:-2s;
   }
 
   .nubes div:nth-child(4){
     top: 80%;
     left: 20%;
-    animation:fall 5s linear infinite ;
+    animation:fall 10s linear infinite ;
     animation-delay:-1s;
   }
 
@@ -147,8 +147,6 @@
     background-color: green;
     color: white;
     }
-
-
     
   .personajes {
     position: absolute;
@@ -156,57 +154,85 @@
     justify-content:flex-end;
     align-items: flex-end;
     flex-direction: column;
+    top:40px
   }
-
   .imgper {
-    width:70%;
-    height:75%;
-    align-self: flex-end;
-  }
-  
-
-  /*Empieza página catálogo*/
+    width: 70%;
+    height: 60%;
+    justify-self:flex-end;
+    bottom: 0%;}
+  /*Empieza página catálogo*/   
+  #pagina{
+    display: none;
+    }
 
   #catalogo{
   display: none;
-   
-    }
+  }
 
     .head {
       display:grid;
       position: absolute;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 100%;
-      background: #6BB3A8;
+      grid-template-columns: 230px 150px 180px 140px 190px;
+      width:100%;
+    }    
+   .logo{
+      width: 200px;
+     }
+    .head h2{
+      font-size: 24px;
     }
 
-    
-   .logo{
-      width: 300px;
-     }
+    .head h2{
+      padding-top: 8%;
+      font-size: 24px;
+    }
+
+    #btnRegresa, #btnPeliculas, #btnTopcinco, #btnPersonajes{
+      color:#da5d5f;
+    font-family: Recursive;
+    font-size: 40px;
+    font-style: normal;
+    line-height: 86px;
+    letter-spacing: 0em;
+    text-align: center;
+    border-radius: 20%;
+    cursor: pointer;
+          
+    }
 
 
+     #btnPeliculas:hover,  #btnPersonajes:hover{
+      background-color: #1C77A3FF;
+      color: white;
+      }
+    #btnRegresa:hover ,  #btnTopcinco:hover{
+      background-color: green;
+      color: white;
+      }
+     
      .slider{
-      display:grid;
-      grid-template-columns: 1fr;
-     top:250px;
-    width: 90%;
-    position: absolute;
-    border: 10px solid black;
+      top:250px;
+      width: 85%;
+      position: absolute;
+      left:150px;
+      
     }
 
 .slider__container{
-    margin:0;
-    width: 110%;
+    width: 100%;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 520px ;
+    grid-template-columns:50px 1fr 1fr 1fr 1fr 1fr 50px;
     align-items:center;
+    
+    
 }
 .sliderBody{
+    width: 120%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items:center;
+    align-self: center;
     gap: 2em;
     grid-column: 2/6;
     grid-row:1/2;
@@ -221,11 +247,9 @@
 }
 .slider__arrow{
     cursor: pointer;
-    width: 40%;
+    width:80%;
 }
-.slider__arrow:nth-last-of-type(2){
-    justify-self:flex-end;
-}
+
 .card{
     cursor: pointer;
     width:235px;
@@ -252,28 +276,6 @@ width: 215px;
 height: 300px;
 margin-top: 30px;
 }
-
-#btnRegresa{
-    width: 194.38px;
-    height: 70.83px;
-    border-radius: 8px;
-    border: 1px solid #000000;
-    color: #F5F5F5;
-    font-family: Recursive;
-    font-size: 33px;
-    font-weight: 700;
-    text-align: center;
-    background-color: #433945;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    margin-left: 46em;
-    }
-
-  #btnRegresa:hover {
-    background-color: green;
-    color: white;
-    }
-
     .buttoninfo{
       background-color: #6BB3A8;
       border: .5;
@@ -281,5 +283,48 @@ margin-top: 30px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       color:azure;
 
+  } 
+  #topCinco{
+    display: none;
+    }
+  #uno{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      align-items:center;
+      align-self: center;
+      gap: 3em;
+      grid-column: 2/6;
+      grid-row:1/2;
+      opacity: 1;
   }
+  #dos{border: #000000;}
+  
+  #personajes{
+    display: none;
+    }
+
+  .popUpPadre{
+    width: 100%;
+    height: 100%;
+    background: #433945;
+    opacity: .8;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index:30000;
+    pointer-events: none;
+    display: none;
+  }
+  .visible{
+    display:none;
+  }
+  .popUpHijo{
+      background: rgba(235, 227, 204, 0.7);
+      margin: 10vh auto 0 auto;
+      padding: 10px;
+      border-radius: 5px;
+  }
+ 
+
   
