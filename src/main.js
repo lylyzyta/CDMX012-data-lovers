@@ -1,4 +1,4 @@
-import {personajesfilter, topCinco} from './data.js';
+import {personajesfilter, topCinco, caracteristicafilter } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 
@@ -16,10 +16,31 @@ datafilertopfive.forEach(movie=>{
 
 resultado.innerHTML= onlyHTML; 
 //Termina función para score
+//Funcion filtro personajes y tarjetas 
+document.getElementById("filterFilm").addEventListener("change",function(event){
+    personajesfilter(data.films, event.target.value)
 
+    let resultadoDos = document.getElementById("dos")
+    let onlyHTMLDos = ''
+    let datafilterpeople = personajesfilter(data.films,event.target.value)
+    datafilterpeople.forEach(persona=>{
+        onlyHTMLDos+=`<article class="card"><h3>${persona.name}</h3><img src=${persona.img}></img></article>`
+    });
+    resultadoDos.innerHTML=onlyHTMLDos;
+    // funcion filtro por especie/genero/edad
+    document.getElementById("filtercharacter").addEventListener("change",function(event){
+        caracteristicafilter (datafilterpeople, event.target.value)
 
-
-
+        let resultadoTres = document.getElementById("dos")
+        let onlyHTMLTres = ''
+        let datafiltercharacter = caracteristicafilter(datafilterpeople,event.target.value)
+        datafiltercharacter.forEach(persona=>{
+        onlyHTMLTres+=`<article class="card"><h3>${persona.name}</h3><img src=${persona.img}></img></article>`
+    });
+    resultadoTres.innerHTML=onlyHTMLTres
+});
+});
+//funciones modal 
 popUpOpen(300);
 function popUpOpen (width){
     let popUpPadre = document.createElement("div")
@@ -35,7 +56,6 @@ function popUpOpen (width){
     popUpPadre.appendChild(popUpHijo)
 
 }
-
 
 //funcion del slider de peliculas
 (function(){
@@ -116,8 +136,5 @@ document.getElementById("buttonmodal").addEventListener("click",function(){
     document.getElementById("popUpPadre").style.display="block";
 })
 
-document.getElementById("filterFilm").addEventListener("change",function(event){
-    personajesfilter(data.films, event.target.value)
-})
 
 // Termina botones

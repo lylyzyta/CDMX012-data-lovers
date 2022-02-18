@@ -10,14 +10,16 @@ export const topCinco = (films) => {
   };
 
 export const personajesfilter = (films, criterio) => {
-    console.log(`Recibi:`)
-    console.log(films)
-    console.log(criterio)
-
-   let resultado = films.filter(element=> element == criterio);
-   console.log(resultado);
-   
+   let titleFilter = films.filter(element => element.title == criterio);
+   let peopleFilter= titleFilter[0].people;
+    return peopleFilter
   };
+export const caracteristicafilter = (personaje,criterio) =>{
+  let personajesFilter = personaje.filter(element => element.gender == criterio);
+
+  return personajesFilter
+ 
+}
 
 
 
