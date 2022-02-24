@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
- 
+</head>
+<body>
     <div class= "nubes">
         <div><img src="./image/Nube.png" ></img></div>
         <div><img src="./image/Nube.png" ></img></div>
@@ -17,20 +16,19 @@
 
 
     <div id = "inicio">
-       
         <section>
             <div class = "personajes">
             <img class = "imgper" src="./image/Entrada_personajes_auto_x2.png" ></div>
         </section>
 
         <section>
-          <div class = "cajabienvenida">
-          <h1 class = "bienvenida">¡Bienvenidx!</h1><br>
-           <p class = "entrada">Si quieres encontrar información <br>
-           sobre las películas de Studio Ghibli<br>
+        <div class = "cajabienvenida">
+        <h1 class = "bienvenida">¡Bienvenidx!</h1><br>
+        <p class = "entrada">Si quieres encontrar información <br>
+        sobre las películas de Studio Ghibli<br>
             da click aquí.</p><br><br>
-          <button id = "btnEntrar">Entrar</button>
-          </div>
+        <button id = "btnEntrar">Entrar</button>
+        </div>
         </section>
     
     </div>
@@ -74,7 +72,7 @@
                     <div class="card">
                         <h3>Grave of the Fireflies</h3>
                         <figure>
-                             <img src="https://static.wikia.nocookie.net/studio-ghibli/images/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg"alt="">
+                        <img src="https://static.wikia.nocookie.net/studio-ghibli/images/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg"alt="">
                         </figure>
                         <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
                     </div>
@@ -95,7 +93,7 @@
                             <img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/41/Porco_Rosso.jpg" alt="">
                         </figure>
                         <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
-                     </div>
+                    </div>
                     <div class="card">
                             <h3>Pom <br>Poko</h3>
                             <figure>
@@ -143,7 +141,7 @@
                     <div class="card">
                         <h3>Howl's Moving Castle</h3>
                         <figure>
-                           <img src="https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg" alt="">
+                        <img src="https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg" alt="">
                         </figure>
                         <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
                     </div>
@@ -168,19 +166,19 @@
                         <figure>
                             <img src="https://picfiles.alphacoders.com/351/351154.jpg" alt="">
                         </figure>
-                         <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
+                        <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
                     </div>
                     <div class="card">
                         <h3>From Up on Poppy Hill</h3>
-                         <figure>
-                            <img src="https://static.wikia.nocookie.net/studio-ghibli/images/b/bb/From_Up_on_Poppy_Hill.jpg" alt="">
+                        <figure>
+                        <img src="https://static.wikia.nocookie.net/studio-ghibli/images/b/bb/From_Up_on_Poppy_Hill.jpg" alt="">
                         </figure>
                         <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
                     </div>
                     <div class="card">
                         <h3>The Wind <br>Rises</h3>
                         <figure>
-                             <img src="https://static.wikia.nocookie.net/studio-ghibli/images/2/2d/The_Wind_Rises.jpg" alt="">
+                        <img src="https://static.wikia.nocookie.net/studio-ghibli/images/2/2d/The_Wind_Rises.jpg" alt="">
                         </figure>
                         <button class="buttoninfo" id="buttonmodal"> Ver ficha </button>
                     </div>
@@ -201,7 +199,6 @@
                 </section><br>
                 <img src="assets/rightarrow.svg" alt="flechita" class="slider__arrow afterarrow" id="after">
             </div>
-   
         </section>
     </div>
     <div id = "topCinco">
@@ -213,8 +210,9 @@
         </section>
     </div>
     <div id = "personajes">
-        <select name="filterFilm" id="filterFilm" style="margin: 200px; position: absolute;;">
-            <option value="">Películas</option>
+        <div id = "menu">
+        <select name="filterFilm" id="filterFilm">
+            <option value="Películas">Películas</option>
             <option value="Castle in the Sky">Castle in the Sky</option>
             <option value="My Neighbor Totoro">My Neighbor Totoro</option>
             <option value="Kiki's Delivery Service">Kiki's Delivery Service</option>
@@ -236,19 +234,39 @@
             <option value="The Tale of the Princess Kaguya">The Tale of the Princess Kaguya</option>
             <option value="When Marnie Was There">When Marnie Was There</option>        
         </select>
-        <select name="filtercharacter" id="filtercharacter" style=" margin: 220px; position: absolute;">
-        <option value="gender">Género</option>
-        <option value="Male">Hombre</option>
-        <option value="Female">Mujer</option> 
-        <option value="NA">Desconocido</option>
-        </select>  
+
+        <select name="filtercharacter" id="filtercharacter">
+            <option label="Género"></option>
+            <option value="Male">Hombre</option>
+            <option value="Female">Mujer</option> 
+            <option value="NA">Indefinido</option>
+        </select> 
+    
+        <select name="filterage" id="filterage">
+            <option label="Edad" ></option>
+            <option value="Niño">Niño</option>
+            <option value="Adulto">Adulto</option> 
+            <option value="Anciano">Anciano</option>
+        </select> 
+    
+        <select name="filterspecie" id="filterspecie">
+            <option label="Especie"></option>
+            <option value="Human">Humano</option>
+            <option value="Animales">Animales</option> 
+            <option value="Deidades">Deidades</option>
+            <option value="Magos y Brujas">Magos y Brujas</option>
+    </select> 
+
+    </div>
+
         <section class="slider">
             <div class= "slider__container">
-        <div id="dos"></div>
+            <div id="dos"></div>
         </div>
+
         </section>
-     </div>
+    </div>
     </div>
     <script src="main.js" type="module"></script>
-  </body>
+</body>
 </html>
