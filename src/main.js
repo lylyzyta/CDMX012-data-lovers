@@ -1,6 +1,41 @@
-import {specieFilter,imprimePersonajes, personajesfilter, topCinco, caracteristicafilter,edadFilter } from './data.js';
+import {specieFilter,imprimePersonajes, personajesfilter, caracteristicafilter,edadFilter, vehiclesfilter, locationsfilter } from './data.js';
 import data from './data/ghibli/ghibli.js';
-//Imprimir personajes
+
+//Inicia función para score
+/*let resultado= document.getElementById("uno");
+let onlyHTML=''
+let datafilertopfive = topCinco(data.films)
+
+datafilertopfive.forEach(movie=>{
+    onlyHTML+= `<article class= "card"><h3>${movie.title}</h3><br><img src=${movie.poster}></img></article>`
+})
+resultado.innerHTML= onlyHTML; 
+//Termina función para score*/
+
+/*Inicia función para vehículos
+let resultado6= document.getElementById("uno");
+let onlyHTML6=''
+let vehiclesdatafilter = vehiclesfilter(data.films);
+
+vehiclesdatafilter.forEach(car=>{
+    onlyHTML6+= `<article class= "card"><h3>${car.name}</h3><br><img src=${car.img}></img></article>`
+})
+resultado6.innerHTML= onlyHTML6; 
+//Termina función para vehículos*/
+
+//Inicia función para locaciones
+let resultado7= document.getElementById("uno");
+let onlyHTML7=''
+let locationsdatafilter = locationsfilter(data.films);
+
+locationsdatafilter.forEach(location=>{
+    onlyHTML7+= `<article class= "card"><h3>${location.name}</h3><br><img src=${location.img}></img></article>`
+})
+resultado7.innerHTML= onlyHTML7; 
+//Termina función para locaciones
+
+
+//Inicia función imprimir todos los personajes
 let resultado1= document.getElementById("dos");
 let onlyHTML1=''
 let imprimirPersonajes = imprimePersonajes(data.films);
@@ -8,23 +43,10 @@ imprimirPersonajes.forEach(personas=> {
     onlyHTML1+= ` <div class="flip-container"><div class="cardpersonajes"><article class="front"><h3>${personas.name}</h3><img src=${personas.img}></img></article><article class="back"><h3>Especie: ${personas.specie}</h3><h3>Edad: ${personas.age}</h3><h3>Color de ojos:<br> ${personas.eye_color}</h3><h3>Color de Cabello: ${personas.hair_color}</h3></article></div></div> `
 })
 resultado1.innerHTML= onlyHTML1; 
-/*let arrayPeople = [element.name, element.img, element.age, element.specie, element.gender];
-let totalPeople = [];
-totalPeople.push(arrayPeople);
-console.log(totalPeople.flat());*/
-//Inicio función para score
-let resultado= document.getElementById("uno");
+//Finaliza función imprimir todos los personajes
 
-let onlyHTML=''
 
-let datafilertopfive = topCinco(data.films)
 
-datafilertopfive.forEach(movie=>{
-    onlyHTML+= `<article class= "card"><h3>${movie.title}</h3><br><img src=${movie.poster}></img></article>`
-})
-
-resultado.innerHTML= onlyHTML; 
-//Termina función para score
 //Funcion filtro personajes y tarjetas 
 document.getElementById("filterFilm").addEventListener("change",function(event){
     personajesfilter(data.films, event.target.value)
