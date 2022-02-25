@@ -5,31 +5,46 @@ export const example = () =>{
 };
 
 export const topCinco = (films) => {
-return films.filter(element=>element.rt_score>=96
-  );
+return films.filter(element=>element.rt_score>=96);
   };
-  export const imprimePersonajes = (films) => {
+
+export const imprimePersonajes = (films) => {
   let arrayCharact=[];
   for(const value of films){
     for(const characters of value.people){
       arrayCharact.push(characters)
     }}return(arrayCharact);
-    };
+};
   
   export const personajesfilter = (films, criterio) => {     
+    if(criterio == "Películas"){
+      let arrayCharact=[];
+    for(const value of films){
+    for(const characters of value.people){
+      arrayCharact.push(characters)
+    }}return(arrayCharact);
+
+    }else{
       let titleFilter = films.filter(element => element.title == criterio);
       let peopleFilter= titleFilter[0].people;
-      return peopleFilter   
+      return peopleFilter }  
     };
 
 
 export const caracteristicafilter = (personaje,criterio) =>{
+  if(criterio == "Género"){
+    return personaje;
+  }else{
   let personajesFilter = personaje.filter(element => element.gender == criterio);
-  return personajesFilter 
+  return personajesFilter ;
+  }
 };
 
 export const specieFilter = (personaje,criterio) =>{
-  if (criterio == "Human"){
+  if(criterio == "Especie"){
+    return personaje;
+
+  } else if (criterio == "Human"){
   let specieHumanaFilter= personaje.filter(element => element.specie == "Human" || element.specie == "Borrower" || element.specie == "unknown" || element.specie == "Human/Scarecrow"); 
   return specieHumanaFilter;
 
@@ -53,17 +68,46 @@ export const specieFilter = (personaje,criterio) =>{
 };
 
 export const edadFilter = (personaje,criterio) =>{
-  if (criterio == "Niño"){
+  if(criterio == "Edad"){
+    return personaje;
+
+  }else if (criterio == "Niño"){
   let edadFilter = personaje.filter(element => element.age <21 || element.age == "Child" || element.age =="circa 14-17" || element.age =="12 (in appearance)" || element.age == "12-14"|| element.age == "Teenager");
-  return edadFilter
+  return edadFilter;
+
 } else if (criterio =="Adulto"){
   let edadFilter= personaje.filter(element => element.age >=21 && element.age <=60 || element.age == "Adult" || element.age == "circa 23-35"|| element.age == "Unspecified/Adult"|| element.age=="Middle Age" || element.age == "At least 40 years"|| element.age == "NA"|| element.age == "Unknown" || element.age== "20-30" || element.age == "Young"); 
-  return edadFilter
+  return edadFilter;
+
 } else if (criterio == "Anciano"){
   let edadFilter= personaje.filter(element => element.age >60 || element.age =="Elder" || element.age =="Over 50"|| element.age == "Unspecified/Ederly" || element.age == "50-60");
   return edadFilter;
 } 
 };
+
+
+//Propuesta cálculo 
+
+//Vehículos
+
+export const vehiclesfilter = (films) => {     
+  let arrayVehicles=[];
+  for(const value of films){
+    for(const vehiclestotal of value.vehicles){
+    arrayVehicles.push(vehiclestotal);
+    }}return(arrayVehicles);
+  
+  };
+
+ //Locaciones 
+export const locationsfilter = (films) => {     
+  let arrayLocations=[];
+  for(const value of films){
+    for(const locationstotal of value.locations){
+    arrayLocations.push(locationstotal);
+    }}return(arrayLocations);
+  
+  };
 
 
 
