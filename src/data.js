@@ -12,8 +12,8 @@ export const imprimePersonajes = (films) => {
   let arrayCharact=[];
   for(const value of films){
     for(const characters of value.people){
-      arrayCharact.push(characters)
-    }}return(arrayCharact);
+      arrayCharact.push(characters)  
+    }}return (arrayCharact);
 };
   
   export const personajesfilter = (films, criterio) => {     
@@ -85,6 +85,43 @@ export const edadFilter = (personaje,criterio) =>{
 } 
 };
 
+export const sortByAZMovies = (sort,films) => {
+  let sortedFilms; 
+    if(sort === 'a-z'){
+      sortedFilms = films.sort((a, b) =>{
+        if(a.title< b.title){
+          return -1;
+        }
+        if (a.title > b.title){
+          return 1;
+        }
+        return 0;
+    })
+    return sortedFilms
+}else 
+  if(sort === 'z-a'){
+  sortedFilms = films.sort((a, b) =>{
+    if(a.title > b.title){
+      return -1;
+    }
+    if (a.title < b.title){
+      return 1;
+    }
+    return 0;
+})
+return sortedFilms
+}else 
+  if(sort ==='date-up'){
+    sortedFilms = films.sort((a, b) =>{
+      return a.release_date - b.release_date;
+  });return sortedFilms
+}else 
+  if (sort === 'date-down'){
+    sortedFilms = films.sort((a, b) =>{
+    return b.release_date - a.release_date;
+  }); return sortedFilms
+}
+  }
 
 //Propuesta cálculo 
 
@@ -96,7 +133,6 @@ export const vehiclesfilter = (films) => {
     for(const vehiclestotal of value.vehicles){
     arrayVehicles.push(vehiclestotal);
     }}return(arrayVehicles);
-  
   };
 
  //Locaciones 
