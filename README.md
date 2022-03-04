@@ -31,7 +31,7 @@ Acordamos que la interfaz de usuario fuera sencilla, amigable, para que con poco
 
 ### Prototipo de baja fidelidad
 
-![p_bajafidelidad1](src/image/Prototipoaltafidelidad1.JPG)
+![p_bajafidelidad1](src/image/Prototipobajafidelidad1.JPG)
 ![p_bajafidelidad1](src/image/Prototipobajafidelidad2.JPG)
 
 ### Prototipo de alta fidelidad
@@ -63,7 +63,7 @@ Mejora. Se cambió de nombre la página por Datos Ghibli en la cual agregamos un
 ##### 5. Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
 En el siguiente link se encuentra publicada nuestra interfaz de usuario.
-![Interfaz](https://candycoding.github.io/CDMX012-data-lovers/src/)
+[Interfaz](https://candycoding.github.io/CDMX012-data-lovers/src/)
 
 
 ###### 6. Pruebas unitarias
