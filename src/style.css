@@ -391,7 +391,7 @@
   position: absolute;
   justify-content:center;
   top: 180px;
-  left: 390px;
+  left: 280px;
   width: 60%;
   align-items:center;
   font-size: 42px;
@@ -425,7 +425,6 @@
     position: absolute;
     justify-content:center;
     top: 800px;
-    left: 30px;
     width: 100%;
     align-items:center;
     font-size: 42px;

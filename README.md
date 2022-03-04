@@ -21,25 +21,25 @@ Acordamos que la interfaz de usuario fuera sencilla, amigable, para que con poco
 
 ## 2. Historias de usuario
 
-[historias](image/HistoriasdeUsuario.jpg)
-[historias1](image/HistoriasdeUsuario1.jpg)
-[historias2](image/HistoriasdeUsuario2.jpg)
-[historias3](image/HistoriasdeUsuario3.jpg)
+![historias](image/HistoriasdeUsuario.jpg)
+![historias1](image/HistoriasdeUsuario1.jpg)
+![historias2](image/HistoriasdeUsuario2.jpg)
+![historias3](image/HistoriasdeUsuario3.jpg)
 
 
 ### 3. Diseño de la Interfaz de Usuario
 
 ### Prototipo de baja fidelidad
 
-[p_bajafidelidad1](image/Prototipobajafidelidad1.JPG)
-[p_bajafidelidad1](image/Prototipobajafidelidad2.JPG)
+![p_bajafidelidad1](image/Prototipobajafidelidad1.JPG)
+![p_bajafidelidad1](image/Prototipobajafidelidad2.JPG)
 
 ### Prototipo de alta fidelidad
 
-[p_altafidelidad1](image/Prototipoaltafidelidad1.JPG)
-[p_altafidelidad2](image/Prototipoaltafidelidad2.JPG)
-[p_altafidelidad3](image/Prototipoaltafidelidad3.JPG)
-[p_altafidelidad4](image/Prototipoaltafidelidad4.JPG)
+![p_altafidelidad1](image/Prototipoaltafidelidad1.JPG)
+![p_altafidelidad2](image/Prototipoaltafidelidad2.JPG)
+![p_altafidelidad3](image/Prototipoaltafidelidad3.JPG)
+![p_altafidelidad4](image/Prototipoaltafidelidad4.JPG)
 
 
 
@@ -63,7 +63,7 @@ Mejora. Se cambió de nombre la página por Datos Ghibli en la cual agregamos un
 ##### 5. Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
 En el siguiente link se encuentra publicada nuestra interfaz de usuario.
-[Interfaz](https://candycoding.github.io/CDMX012-data-lovers/src/)
+![Interfaz](https://candycoding.github.io/CDMX012-data-lovers/src/)
 
 
 ###### 6. Pruebas unitarias
@@ -72,4 +72,4 @@ Se generó archivo data.spec.js, con el cual llevamos a cabo pruebas unitarias d
 
 Nuestras pruebas unitarias superaron la cobertura requerida para el presente proyecto.
 
-[Test](image/CapturaPantalla.png)
+![Test](image/CapturaPantalla.png)
