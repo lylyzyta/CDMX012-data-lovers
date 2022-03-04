@@ -21,25 +21,25 @@ Acordamos que la interfaz de usuario fuera sencilla, amigable, para que con poco
 
 ## 2. Historias de usuario
 
-![historias](image/HistoriasdeUsuario.jpg)
-![historias1](image/HistoriasdeUsuario1.jpg)
-![historias2](image/HistoriasdeUsuario2.jpg)
-![historias3](image/HistoriasdeUsuario3.jpg)
+![historias](src/image/HistoriasdeUsuario.JPG)
+![historias1](src/image/HistoriasdeUsuario1.JPG)
+![historias2](src/image/HistoriasdeUsuario2.JPG)
+![historias3](src/image/HistoriasdeUsuario3.JPG)
 
 
 ### 3. Diseño de la Interfaz de Usuario
 
 ### Prototipo de baja fidelidad
 
-![p_bajafidelidad1](image/Prototipobajafidelidad1.JPG)
-![p_bajafidelidad1](image/Prototipobajafidelidad2.JPG)
+![p_bajafidelidad1](src/image/Prototipoaltafidelidad1.JPG)
+![p_bajafidelidad1](src/image/Prototipobajafidelidad2.JPG)
 
 ### Prototipo de alta fidelidad
 
-![p_altafidelidad1](image/Prototipoaltafidelidad1.JPG)
-![p_altafidelidad2](image/Prototipoaltafidelidad2.JPG)
-![p_altafidelidad3](image/Prototipoaltafidelidad3.JPG)
-![p_altafidelidad4](image/Prototipoaltafidelidad4.JPG)
+![p_altafidelidad1](src/image/Prototipoaltafidelidad1.JPG)
+![p_altafidelidad2](src/image/Prototipoaltafidelidad2.JPG)
+![p_altafidelidad3](src/image/Prototipoaltafidelidad3.JPG)
+![p_altafidelidad4](src/image/Prototipoaltafidelidad4.JPG)
 
 
 
@@ -72,4 +72,4 @@ Se generó archivo data.spec.js, con el cual llevamos a cabo pruebas unitarias d
 
 Nuestras pruebas unitarias superaron la cobertura requerida para el presente proyecto.
 
-![Test](image/CapturaPantalla.png)
+![Test](src/image/CapturaPantalla.png)
