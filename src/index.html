@@ -10,127 +10,116 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class= "nubes">
-        <div><img src="./image/Nube.png" ></div>
-        <div><img src="./image/Nube.png" ></div>
-        <div><img src="./image/Nube.png" ></div>
-        <div><img src="./image/Nube.png" ></div>
-    </div>
-    <div id = "inicio">
+    <figure class= "nubes">
+        <div><img src="./image/Nube.png" alt="nube"></div>
+        <div><img src="./image/Nube.png" alt="nube"></div>
+        <div><img src="./image/Nube.png" alt="nube"></div>
+        <div><img src="./image/Nube.png" alt="nube"></div>
+    </figure>
+    <section id = "inicio">
         <section>
-            <div class = "personajes">
-            <img class = "imgper" src="./image/Entrada_personajes_auto_x2.png" ></div>
+            <figure class = "personajes">
+                <img class = "imgper" src="./image/Entrada_personajes_auto_x2.png" alt="entradapersonajes">
+            </figure>
         </section>
         <section>
-        <div class = "cajabienvenida">
-        <h1 class = "bienvenida">¡Bienvenidx!</h1><br>
-        <p class = "entrada">Si quieres encontrar información <br>
-        sobre las películas de Studio Ghibli<br>
-            da click aquí.</p><br><br>
-        <button id = "btnEntrar">Entrar</button>
-        </div>
+            <div class = "cajabienvenida">
+                <h1 class = "bienvenida">¡Bienvenidx!</h1><br>
+                <p class = "entrada">Si quieres encontrar información <br>
+                sobre las películas de Studio Ghibli<br>
+                da click aquí.</p><br><br>
+                <button id = "btnEntrar">Entrar</button>
+            </div>
         </section>
-    </div>
-    <div id = "pagina">
-        <nav class="head">
-            <img class="logo" src="image/logo.png" />
+    </section>
+    <section id = "pagina">
+        <nav class="menusuperior">
+            <img class="logo" src="image/logo.png" alt="logo"/>
             <h2 id="btnRegresa"> Inicio</h2>
             <h2 id="btnPeliculas"> Películas</h2>
             <h2 id="btndatosGhibli"> Datos Ghibli</h2>
             <h2 id="btnPersonajes">Personajes</h2>
         </nav>       
     <!--Aca poner el contededor-->
-    <div id = "catalogo">
-            <select name="sortfilms" id="sortfilms" class="buttoninfo">
-                <option > Ordenar </option>
-                <option value="a-z"> De A hacia Z</option>
-                <option value="z-a"> De Z hacia A</option>
-                <option value="date-up">Por antiguedad (mayor a menor)</option>
-                <option value="date-down">Por antiguedad (menor a mayor)</option>
-            </select>
-        <div class="carruseldiv" id="carruseldiv">
-            <div id="carrusel" class="carrusel">
-                <div class="carruselbox" id="carruselbox" >
-                    <template  id="templatemoviecards">
-                        <div class="flip-container">
-                        <div class="card" >
-                        <h3 class="front">${pelicula.title}</h3>
-                        <figure class="front"> 
-                            <img src="${pelicula.poster}">
-                        </figure>
-                            <p class="back"></p> <br>                    
-                        
-                        </div>
-                        </div>
+    <section id = "pantallapeliculas">
+        <img src="assets/leftarrow.svg" alt="flecha" class="flecha izquierda" id="flechaizquierda">
+        <img src="assets/rightarrow.svg" alt="flecha" class="flecha derecha" id="flechaderecha">
+        <section class="carruselcontainer" id="carruselcontainer">
+            <section id="carrusel" class="carrusel">
+                    <template  id="templatetarjetaspeliculas">
+                        <section class="contenedor-flip">
+                            <article class="tarjeta" >
+                                <h3 class="frente"></h3>
+                                <figure class="frente"> 
+                                    <img alt="posterpelicula">
+                                </figure>
+                                    <p class="posterior"></p> <br>                       
+                            </article>
+                        </section>
                     </template>
-                
-                </div>
-            </div>
+        </section>  
+            </section>
+    </section>         
+    <section id= "datosGhibli">
+            <h2 class="titulotopcinco">PELÍCULAS - TOP CINCO </h2>
+                <section id="imprimetopcinco"> </section> 
+            <h3 class="titulodatosDirectores">DIRECTORES POR TOTAL DE PELÍCULAS </h3>
+                <section class="chart"><canvas id="myChart"></canvas></section>
+    </section>
+    <section id = "personajes">
+        <div id = "menufiltros">
+            <select name="filterpeliculas" id="filterpeliculas">
+                <option value="Películas">Películas</option>
+                <option value="Castle in the Sky">Castle in the Sky</option>
+                <option value="My Neighbor Totoro">My Neighbor Totoro</option>
+                <option value="Kiki's Delivery Service">Kiki's Delivery Service</option>
+                <option value="Grave of the Fireflies">Grave of the Fireflies</option>
+                <option value="Only Yesterday">Only Yesterday</option>
+                <option value="Porco Rosso">Porco Rosso</option>
+                <option value="Pom Poko">Pom Poko</option>
+                <option value="Whisper of the Heart">Whisper of the Heart</option>
+                <option value="Princess Mononoke">Princess Mononoke</option>
+                <option value="My Neighbors the Yamadas">My Neighbors the Yamadas</option>
+                <option value="Spirited Away">Spirited Away</option>
+                <option value="The Cat Returns">The Cat Returns</option>
+                <option value="Howl's Moving Castle">Howl's Moving Castle</option>
+                <option value="Tales from Earthsea">Tales from Earthsea</option>
+                <option value="Ponyo on the Cliff by the Sea">Ponyo on the Cliff by the Sea</option>
+                <option value="The Secret World of Arrietty">The Secret World of Arrietty</option>
+                <option value="From Up on Poppy Hill">From Up on Poppy Hill</option>
+                <option value="The Wind Rises">The Wind Rises</option>
+                <option value="The Tale of the Princess Kaguya">The Tale of the Princess Kaguya</option>
+                <option value="When Marnie Was There">When Marnie Was There</option>        
+            </select>
+            <select name="filtergenero" id="filtergenero">            
+                <option value="Género">Género</option>
+                <option value="Male">Hombre</option>
+                <option value="Female">Mujer</option> 
+                <option value="NA">Indefinido</option>
+            </select> 
+            <select name="filterespecie" id="filterespecie">
+                <option value="Especie">Especie</option>
+                <option value="Human">Humano</option>
+                <option value="Animales">Animales</option> 
+                <option value="Deidades">Deidades</option>
+                <option value="Magos y Brujas">Magos y Brujas</option>
+            </select> 
+            <select name="filteredad" id="filteredad" data-clear-button="true" data-filter="true" >
+                <option value="Edad" >Edad</option>
+                <option value="Niño">Niño</option>
+                <option value="Adulto">Adulto</option> 
+                <option value="Anciano">Anciano</option>
+            </select> 
         </div>
-            
-        <img src="assets/leftarrow.svg" alt="flechita" class="slick-arrow beforearrow" id="beforearrow">
-        <img src="assets/rightarrow.svg" alt="flechita" class="slick-arrow afterarrow" id="afterarrow">
-    </div>
-    <div id= "datosGhibli">
-        <section class="slider">
-        <div id="uno"> PELÍCULAS - TOP CINCO</div> 
-            <div class="chart"> <canvas id="myChart"></canvas></div>
-        </section> 
-    </div>
-    <div id = "personajes">
-        <div id = "menu">
-        <select name="filterFilm" id="filterFilm">
-            <option value="Películas">Películas</option>
-            <option value="Castle in the Sky">Castle in the Sky</option>
-            <option value="My Neighbor Totoro">My Neighbor Totoro</option>
-            <option value="Kiki's Delivery Service">Kiki's Delivery Service</option>
-            <option value="Grave of the Fireflies">Grave of the Fireflies</option>
-            <option value="Only Yesterday">Only Yesterday</option>
-            <option value="Porco Rosso">Porco Rosso</option>
-            <option value="Pom Poko">Pom Poko</option>
-            <option value="Whisper of the Heart">Whisper of the Heart</option>
-            <option value="Princess Mononoke">Princess Mononoke</option>
-            <option value="My Neighbors the Yamadas">My Neighbors the Yamadas</option>
-            <option value="Spirited Away">Spirited Away</option>
-            <option value="The Cat Returns">The Cat Returns</option>
-            <option value="Howl's Moving Castle">Howl's Moving Castle</option>
-            <option value="Tales from Earthsea">Tales from Earthsea</option>
-            <option value="Ponyo on the Cliff by the Sea">Ponyo on the Cliff by the Sea</option>
-            <option value="The Secret World of Arrietty">The Secret World of Arrietty</option>
-            <option value="From Up on Poppy Hill">From Up on Poppy Hill</option>
-            <option value="The Wind Rises">The Wind Rises</option>
-            <option value="The Tale of the Princess Kaguya">The Tale of the Princess Kaguya</option>
-            <option value="When Marnie Was There">When Marnie Was There</option>        
-        </select>
-        <select name="filtercharacter" id="filtercharacter">            
-            <option value="Género">Género</option>
-            <option value="Male">Hombre</option>
-            <option value="Female">Mujer</option> 
-            <option value="NA">Indefinido</option>
-        </select> 
-        <select name="filterspecie" id="filterspecie">
-            <option value="Especie">Especie</option>
-            <option value="Human">Humano</option>
-            <option value="Animales">Animales</option> 
-            <option value="Deidades">Deidades</option>
-            <option value="Magos y Brujas">Magos y Brujas</option>
-    </select> 
-        <select name="filterage" id="filterage" data-clear-button="true" data-filter="true" >
-            <option value="Edad" >Edad</option>
-            <option value="Niño">Niño</option>
-            <option value="Adulto">Adulto</option> 
-            <option value="Anciano">Anciano</option>
-        </select> 
-    </div>
-        <section class="people">
-            <div id="dos"></div>
-        </section>
-        <a href="#" class="to-top" id="to-top">
+    <section class = "todoslospersonajes">
+            <div id="imprimirpersonajes"></div>
+    </section>
+        <a href="#" class="arriba" id="arriba">
             <img src="assets/uparrow.svg">
             <i class="fas fa-chervron-up"></i>
         </a>
-    </div>
-    </div>
+    </section>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js" type="module"></script>
 </body>

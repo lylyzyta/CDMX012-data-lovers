@@ -1,5 +1,5 @@
 import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
-import {topCinco, imprimePersonajes, personajesfilter,caracteristicafilter,specieFilter, edadFilter} from '../src/data.js';
+import {topCinco, imprimePersonajes, personajesfilter,filtroPorGenero,filtroPorEspecie, filtroPorEdad} from '../src/data.js';
 //import dataMockeada  from './dataMock'
 //Test Función topCinco
 describe('topCinco', () => {
@@ -8,7 +8,7 @@ describe('topCinco', () => {
   });
 
   it('returns `topCinco`', () => {
-    const films=
+    const filmes=
     [
       {
           "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
@@ -31,7 +31,7 @@ describe('topCinco', () => {
         "rt_score": "95",
       },
     ]
-      expect(topCinco(films)).toEqual(
+      expect(topCinco(filmes)).toEqual(
         [
           {
             "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
@@ -270,12 +270,12 @@ const pelicula=
     },
       ])
     })
-describe('caracteristicafilter',()=>{
+describe('filtroPorGenero',()=>{
   it('is a function',()=>{
-    expect(typeof caracteristicafilter).toBe('function');
+    expect(typeof filtroPorGenero).toBe('function');
   });
 })
-it ('`returns caracteristicafilter`',()=>{
+it ('`returns filtroPorGeneror`',()=>{
   const personaje=[
     {
         "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
@@ -298,7 +298,7 @@ it ('`returns caracteristicafilter`',()=>{
         "specie": "Human"
     },
   ]
-  expect(caracteristicafilter(personaje,"Género")).toEqual([
+  expect(filtroPorGenero(personaje,"Género")).toEqual([
     {
         "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
         "name": "Pazu",
@@ -321,7 +321,7 @@ it ('`returns caracteristicafilter`',()=>{
     },
   ]
   )
-  expect(caracteristicafilter(personaje,"Male")).toEqual([
+  expect(filtroPorGenero(personaje,"Male")).toEqual([
     {
       "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
       "name": "Pazu",
@@ -333,7 +333,7 @@ it ('`returns caracteristicafilter`',()=>{
       "specie": "Human"
   },
   ])
-  expect(caracteristicafilter(personaje,"Female")).toEqual([
+  expect(filtroPorGenero(personaje,"Female")).toEqual([
     {
       "id": "598f7048-74ff-41e0-92ef-87dc1ad980a9",
       "name": "Lusheeta Toel Ul Laputa",
@@ -350,10 +350,10 @@ it ('`returns caracteristicafilter`',()=>{
 //Test especies////
 describe('specieFilter',()=>{
   it('is a function', () => {
-    expect(typeof specieFilter).toBe('function');
+    expect(typeof filtroPorEspecie).toBe('function');
   });
 })
-it('`returns specieFilter`', () => {
+it('`returns filtroPorEspecie`', () => {
   const personajes =
   [
           {
@@ -397,7 +397,7 @@ it('`returns specieFilter`', () => {
               "specie": "Human"
             }, 
                       ];
-expect(specieFilter(personajes,"Especie")).toEqual(
+expect(filtroPorEspecie(personajes,"Especie")).toEqual(
   [
     {
       "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
@@ -440,7 +440,7 @@ expect(specieFilter(personajes,"Especie")).toEqual(
     "specie": "Human"
   },
 ]),
-expect(specieFilter(personajes,"Human")).toEqual(
+expect(filtroPorEspecie(personajes,"Human")).toEqual(
   [
   {
 "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
@@ -473,11 +473,11 @@ expect(specieFilter(personajes,"Human")).toEqual(
     "specie": "Human"
   },
 ]),
-expect(specieFilter(personajes,"Animales")).toEqual(
+expect(filtroPorEspecie(personajes,"Animales")).toEqual(
   []),
-expect(specieFilter(personajes,"Deidades")).toEqual(
+expect(filtroPorEspecie(personajes,"Deidades")).toEqual(
   []),
-expect(specieFilter(personajes,"Magos y Brujas")).toEqual(
+expect(filtroPorEspecie(personajes,"Magos y Brujas")).toEqual(
   [
   {
 
@@ -494,12 +494,12 @@ expect(specieFilter(personajes,"Magos y Brujas")).toEqual(
 ]);
 })
 //Filtro Edad//
-describe('edadFilter',()=>{
+describe('filtroPorEdad',()=>{
   it('is a function', () => {
-    expect(typeof edadFilter).toBe('function');
+    expect(typeof filtroPorEdad).toBe('function');
   });
 })
-it('`returns edadFilter`', () => {
+it('`returns filtroPorEdad`', () => {
   const personas =
   [
     {
@@ -543,7 +543,7 @@ it('`returns edadFilter`', () => {
               "specie": "Human"
             }, 
                       ];
-expect (edadFilter(personas,"Edad")).toEqual(
+expect (filtroPorEdad(personas,"Edad")).toEqual(
   [
     {
       "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
@@ -586,7 +586,7 @@ expect (edadFilter(personas,"Edad")).toEqual(
     "specie": "Human"
   },
 ]),
-expect(edadFilter(personas,"Niño")).toEqual(
+expect(filtroPorEdad(personas,"Niño")).toEqual(
   [
   {
 "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
@@ -619,7 +619,7 @@ expect(edadFilter(personas,"Niño")).toEqual(
     "specie": "Human"
   },
 ]),
-expect(edadFilter(personas,"Adulto")).toEqual(
+expect(filtroPorEdad(personas,"Adulto")).toEqual(
   [
   {
     "id": "fa9b410f-cad4-457d-ac71-86b0afa6cf0a",
@@ -632,7 +632,7 @@ expect(edadFilter(personas,"Adulto")).toEqual(
     "specie": "Wizard"
   },
 ]),
-expect(edadFilter(personas,"Anciano")).toEqual(
+expect(filtroPorEdad(personas,"Anciano")).toEqual(
   []);
 })
 

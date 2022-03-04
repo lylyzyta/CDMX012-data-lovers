@@ -4,34 +4,34 @@ export const example = () =>{
  //console.log("ejemplo");
 };
 
-export const topCinco = (films) => {
-return films.filter(element=>element.rt_score>=96);
+export const topCinco = (filmes) => {
+return filmes.filter(element=>element.rt_score>=96);
   };
 
-export const imprimePersonajes = (films) => {
+export const imprimePersonajes = (filmes) => {
   let arrayCharact=[];
-  for(const value of films){
+  for(const value of filmes){
     for(const characters of value.people){
       arrayCharact.push(characters)  
     }}return (arrayCharact);
 };
   
-  export const personajesfilter = (films, criterio) => {     
+  export const personajesfilter = (filmes, criterio) => {     
     if(criterio == "Películas"){
       let arrayCharact=[];
-    for(const value of films){
+    for(const value of filmes){
     for(const characters of value.people){
       arrayCharact.push(characters)
     }}return(arrayCharact);
 
     }else{
-      let titleFilter = films.filter(element => element.title == criterio);
+      let titleFilter = filmes.filter(element => element.title == criterio);
       let peopleFilter= titleFilter[0].people;
       return peopleFilter }  
     };
 
 
-export const caracteristicafilter = (personaje,criterio) =>{
+export const filtroPorGenero  = (personaje,criterio) =>{
   if(criterio == "Género"){
     return personaje;
   }else{
@@ -40,7 +40,7 @@ export const caracteristicafilter = (personaje,criterio) =>{
   }
 };
 
-export const specieFilter = (personaje,criterio) =>{
+export const filtroPorEspecie = (personaje,criterio) =>{
   if(criterio == "Especie"){
     return personaje;
 
@@ -67,83 +67,26 @@ export const specieFilter = (personaje,criterio) =>{
   }
 };
 
-export const edadFilter = (personaje,criterio) =>{
+export const filtroPorEdad = (personaje,criterio) =>{
   if(criterio == "Edad"){
     return personaje;
 
   }else if (criterio == "Niño"){
-  let edadFilter = personaje.filter(element => element.age <21 || element.age == "Child" || element.age =="circa 14-17" || element.age =="12 (in appearance)" || element.age == "12-14"|| element.age == "Teenager");
-  return edadFilter;
+  let filtroPorEdad = personaje.filter(element => element.age <21 || element.age == "Child" || element.age =="circa 14-17" || element.age =="12 (in appearance)" || element.age == "12-14"|| element.age == "Teenager");
+  return filtroPorEdad;
 
 } else if (criterio =="Adulto"){
-  let edadFilter= personaje.filter(element => element.age >=21 && element.age <=60 || element.age == "Adult" || element.age == "circa 23-35"|| element.age == "Unspecified/Adult"|| element.age=="Middle Age" || element.age == "At least 40 years"|| element.age == "NA"|| element.age == "Unknown" || element.age== "20-30" || element.age == "Young"); 
-  return edadFilter;
+  let filtroPorEdad= personaje.filter(element => element.age >=21 && element.age <=60 || element.age == "Adult" || element.age == "circa 23-35"|| element.age == "Unspecified/Adult"|| element.age=="Middle Age" || element.age == "At least 40 years"|| element.age == "NA"|| element.age == "Unknown" || element.age== "20-30" || element.age == "Young"); 
+  return filtroPorEdad;
 
 } else if (criterio == "Anciano"){
-  let edadFilter= personaje.filter(element => element.age >60 || element.age =="Elder" || element.age =="Over 50"|| element.age == "Unspecified/Ederly" || element.age == "50-60");
-  return edadFilter;
+  let filtroPorEdad= personaje.filter(element => element.age >60 || element.age =="Elder" || element.age =="Over 50"|| element.age == "Unspecified/Ederly" || element.age == "50-60");
+  return filtroPorEdad;
 } 
 };
 
-export const sortByAZMovies = (sort,films) => {
-  let sortedFilms; 
-    if(sort === 'a-z'){
-      sortedFilms = films.sort((a, b) =>{
-        if(a.title< b.title){
-          return -1;
-        }
-        if (a.title > b.title){
-          return 1;
-        }
-        return 0;
-    })
-    return sortedFilms
-}else 
-  if(sort === 'z-a'){
-  sortedFilms = films.sort((a, b) =>{
-    if(a.title > b.title){
-      return -1;
-    }
-    if (a.title < b.title){
-      return 1;
-    }
-    return 0;
-})
-return sortedFilms
-}else 
-  if(sort ==='date-up'){
-    sortedFilms = films.sort((a, b) =>{
-      return a.release_date - b.release_date;
-  });return sortedFilms
-}else 
-  if (sort === 'date-down'){
-    sortedFilms = films.sort((a, b) =>{
-    return b.release_date - a.release_date;
-  }); return sortedFilms
-}
-  }
 
-//Propuesta cálculo 
 
-//Vehículos
-
-export const vehiclesfilter = (films) => {     
-  let arrayVehicles=[];
-  for(const value of films){
-    for(const vehiclestotal of value.vehicles){
-    arrayVehicles.push(vehiclestotal);
-    }}return(arrayVehicles);
-  };
-
- //Locaciones 
-export const locationsfilter = (films) => {     
-  let arrayLocations=[];
-  for(const value of films){
-    for(const locationstotal of value.locations){
-    arrayLocations.push(locationstotal);
-    }}return(arrayLocations);
-  
-  };
 
 
 
