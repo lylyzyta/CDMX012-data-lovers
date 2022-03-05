@@ -1,13 +1,9 @@
-// estas funciones son de ejemplo
-
-export const example = () =>{
- //console.log("ejemplo");
-};
-
+//Función fitro TopCinco
 export const topCinco = (filmes) => {
 return filmes.filter(element=>element.rt_score>=96);
   };
 
+//Función para imprimir todos los personajes
 export const imprimePersonajes = (filmes) => {
   let arrayCharact=[];
   for(const value of filmes){
@@ -15,7 +11,8 @@ export const imprimePersonajes = (filmes) => {
       arrayCharact.push(characters)  
     }}return (arrayCharact);
 };
-  
+ 
+//Función para filtrar personajes por películas
   export const personajesfilter = (filmes, criterio) => {     
     if(criterio == "Películas"){
       let arrayCharact=[];
@@ -30,7 +27,7 @@ export const imprimePersonajes = (filmes) => {
       return peopleFilter }  
     };
 
-
+//Función para filtrar por género
 export const filtroPorGenero  = (personaje,criterio) =>{
   if(criterio == "Género"){
     return personaje;
@@ -40,6 +37,7 @@ export const filtroPorGenero  = (personaje,criterio) =>{
   }
 };
 
+//Función para filtrar por especie
 export const filtroPorEspecie = (personaje,criterio) =>{
   if(criterio == "Especie"){
     return personaje;
@@ -67,6 +65,7 @@ export const filtroPorEspecie = (personaje,criterio) =>{
   }
 };
 
+//Función para filtrar por edad
 export const filtroPorEdad = (personaje,criterio) =>{
   if(criterio == "Edad"){
     return personaje;
