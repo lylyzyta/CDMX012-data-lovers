@@ -1,22 +1,18 @@
-//import { Chart } from 'chart.js';
 import {topCinco, filtroPorEspecie ,imprimePersonajes, personajesfilter, filtroPorGenero ,filtroPorEdad } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-//segunda versión de sliderpeliculas 
+//Segunda versión de sliderpeliculas 
 const tarjetasPeliculas = document.querySelector('#carrusel');
 const filmes = data.films;
 const templateMovieCard = document.getElementById("templatetarjetaspeliculas").content;
 const fragment= document.createDocumentFragment();
-
     filmes.forEach(pelicula =>{
     templateMovieCard.querySelector('h3').textContent = pelicula.title;
     templateMovieCard.querySelector('img').setAttribute("src", pelicula.poster);
-    templateMovieCard.querySelector('p').textContent = "Descripción:  " + pelicula.description /*+ "                " + 
-    "Director: " + pelicula.director + "                  " +
-    "Productor: " + pelicula.producer ; */
+    templateMovieCard.querySelector('p').textContent = "Descripción:  " + pelicula.description;
     let $clone = templateMovieCard.cloneNode(templateMovieCard,true);
     fragment.appendChild($clone);
-})
+    })
 tarjetasPeliculas.appendChild(fragment);
 const fila = document.getElementById("carruselcontainer")
 document.getElementById("flechaizquierda").addEventListener('click',() =>{
@@ -25,7 +21,8 @@ Math.ceil(fila.scrollLeft -= fila.offsetWidth);
 document.getElementById("flechaderecha").addEventListener('click',()=>{
 Math.ceil(fila.scrollLeft += fila.offsetWidth);
 })
-//Inicia función para top5
+//Termina slider películas
+//Inicia imprime fitro topCinco
 let resultado= document.getElementById("imprimetopcinco");
 let onlyHTML='';
 let filtrodatatopcinco = topCinco(data.films);
@@ -33,7 +30,8 @@ filtrodatatopcinco.forEach(movie=>{
     onlyHTML+= `<article class= "tarjeta"><h3>${movie.title}</h3><br><img src=${movie.poster}></img></article>`
 });
 resultado.innerHTML= onlyHTML;
-//Funcion Chart
+//Termina imprime fitro topCinco
+//Inicia función Chart para gráfica de directores
 let directorTotal,
     HayaoMiyazakiPorcentaje,
     IsaoTakahataPorcentaje,
@@ -87,7 +85,7 @@ cargarGrafica(grafica);
     resultadoPorcentaje.push(HiromasaYonebayashiPorcentaje);
 
 function cargarGrafica(grafica){
-    // eslint-disable-next-line no-undef
+  // eslint-disable-next-line no-undef
     const myChart= new Chart(grafica,{
         type: 'bar',
         data: {
@@ -125,7 +123,8 @@ function cargarGrafica(grafica){
     });
     return myChart;
 }
-//Inicia función imprimir todos los personajes
+//Termina función Chart para gráfica de directores
+//Inicia fitro imprimir todos los personajes
 let resultadoImprimirPersonajes= document.getElementById("imprimirpersonajes");
 let onlyHtmlPersonaje=''
 let imprimirPersonajes = imprimePersonajes(data.films);
@@ -133,8 +132,8 @@ imprimirPersonajes.forEach(personas=> {
     onlyHtmlPersonaje+= ` <div class="contenedor-flip"><div class="cardpersonajes"><article class="frente"><h3>${personas.name}</h3><img src=${personas.img}></img></article><article class="posterior"><h3>Especie: ${personas.specie}</h3><h3>Edad: ${personas.age}</h3><h3>Color de ojos:<br> ${personas.eye_color}</h3><h3>Color de Cabello: ${personas.hair_color}</h3></article></div></div> `
 })
 resultadoImprimirPersonajes.innerHTML= onlyHtmlPersonaje; 
-//Finaliza función imprimir todos los personajes
-//Funcion filtro personajes y tarjetas 
+//Finaliza filtro imprimir todos los personajes
+//Inicia  filtro personajes por película
 document.getElementById("filterpeliculas").addEventListener("change",function(event){
     personajesfilter(data.films, event.target.value)
     let resultadoPersonajesXPelicula = document.getElementById("imprimirpersonajes")
@@ -144,18 +143,20 @@ document.getElementById("filterpeliculas").addEventListener("change",function(ev
         onlyHtmlPelicula+=` <div class="contenedor-flip"><div class="cardpersonajes"><article class="frente"><h3>${persona.name}</h3><img src=${persona.img}></img></article><article class="posterior"><h3>Especie: ${persona.specie}</h3><h3>Edad: ${persona.age}</h3><h3>Color de ojos:<br> ${persona.eye_color}</h3><h3>Color de Cabello: ${persona.hair_color}</h3></article></div></div> `
     });
     resultadoPersonajesXPelicula.innerHTML=onlyHtmlPelicula;
-    // funcion filtro por pelicula/genero/especie/edad
-    document.getElementById("filtergenero").addEventListener("change",function(event){
-        filtroPorGenero (dataPersonajes, event.target.value)
-
-        let resultadoGenero = document.getElementById("imprimirpersonajes")
-        let onlyHTMLGenero = ''
-        let datafiltergenero = filtroPorGenero (dataPersonajes,event.target.value)
-        datafiltergenero.forEach(persona=>{
-        onlyHTMLGenero+=` <div class="contenedor-flip"><div class="cardpersonajes"><article class="frente"><h3>${persona.name}</h3><img src=${persona.img}></img></article><article class="posterior"><h3>Especie: ${persona.specie}</h3><h3>Edad: ${persona.age}</h3><h3>Color de ojos:<br> ${persona.eye_color}</h3><h3>Color de Cabello:<br> ${persona.hair_color}</h3></article></div></div> `
-        });
+//Termina filtro personajes por película 
+// Inicia filtro por género
+document.getElementById("filtergenero").addEventListener("change",function(event){
+    filtroPorGenero (dataPersonajes, event.target.value)
+    let resultadoGenero = document.getElementById("imprimirpersonajes")
+    let onlyHTMLGenero = ''
+    let datafiltergenero = filtroPorGenero (dataPersonajes,event.target.value)
+    datafiltergenero.forEach(persona=>{
+    onlyHTMLGenero+=` <div class="contenedor-flip"><div class="cardpersonajes"><article class="frente"><h3>${persona.name}</h3><img src=${persona.img}></img></article><article class="posterior"><h3>Especie: ${persona.specie}</h3><h3>Edad: ${persona.age}</h3><h3>Color de ojos:<br> ${persona.eye_color}</h3><h3>Color de Cabello:<br> ${persona.hair_color}</h3></article></div></div> `
+    });
     resultadoGenero.innerHTML=onlyHTMLGenero
 });
+// Termina filtro por género
+// Inicia filtro por especie
 document.getElementById("filterespecie").addEventListener("change",function(event){
     filtroPorEspecie(dataPersonajes, event.target.value)
     //console.log(specieFilter)
@@ -167,6 +168,8 @@ document.getElementById("filterespecie").addEventListener("change",function(even
         });
     resultadoEspecie.innerHTML=onlyHtmlEspecie
 })
+// Termina filtro por especie
+// Inicia filtro por edad
 document.getElementById("filteredad").addEventListener("change",function(event){
     filtroPorEdad(dataPersonajes, event.target.value)
     let resultadoEdad = document.getElementById("imprimirpersonajes");
@@ -178,6 +181,7 @@ document.getElementById("filteredad").addEventListener("change",function(event){
         resultadoEdad.innerHTML=onlyHtmlEdad
 })
 });
+// Termina filtro por edad
 //Inicia  Botones
 document.getElementById("btnEntrar").addEventListener("click", function() {
     document.getElementById("pantallapeliculas").style.display="block";
